@@ -3,13 +3,14 @@ import { Menssage } from "@/_types/menssage";
 import { ArrowUturnLeftIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 
-interface ChatProps {
-  params: { clientNumber: string };
-}
-
-export default async function Chat({ params }: ChatProps) {
+export default async function Chat({
+  params,
+}: {
+  params: Promise<{ clientNumber: string }>;
+}) {
+  const { clientNumber } = await params;
   const messages = await getMessages<Menssage[]>({
-    clientNumber: params.clientNumber,
+    clientNumber: clientNumber,
   });
 
   return (
