@@ -33,7 +33,7 @@ export default async function Chat({
             }`}
           >
             <div
-              className={`flex flex-col gap-2 p-5 rounded-xl w-full max-w-[40%] ${
+              className={`flex flex-col gap-2 p-5 rounded-xl w-full max-w-[65%] lg:max-w-[40%] ${
                 message.action === "ENVIADO" ? "bg-gray-600" : "bg-gray-800"
               } `}
             >
