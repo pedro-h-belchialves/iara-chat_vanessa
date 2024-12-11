@@ -12,16 +12,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <main
       {...props}
-      className="flex max-h-screen overflow-y-scroll flex-col gap-4  items-center sm:items-start bg-gray-950 px-4"
+      className="flex max-h-screen overflow-y-scroll flex-col gap-4 py-5  items-center sm:items-start bg-gray-950 px-4"
     >
       <div className="flex flex-col gap-4">
-        {contacts.map((contact) => (
-          <ContactButton
-            key={contact.id || ""}
-            name={contact.name || ""}
-            number={contact.number}
-          />
-        ))}
+        {contacts.map((contact) => {
+          if (!contact.name && !contact.number) return null;
+          return (
+            <ContactButton
+              key={contact.id || ""}
+              name={contact.name || ""}
+              number={contact.number}
+            />
+          );
+        })}
       </div>
     </main>
   );
