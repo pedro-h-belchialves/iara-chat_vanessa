@@ -13,6 +13,22 @@ export default async function Chat({
     clientNumber: clientNumber,
   });
 
+  if (!messages || messages.length === 0) {
+    return (
+      <main>
+        <div className="w-full text-white h-10 bg-gray-900 flex justify-between p-2">
+          Não foi possível carregar as mensagens
+          <Link
+            className="text-white bg-gray-700 px-2 rounded-lg top-5 right-5"
+            href="/"
+          >
+            <ArrowUturnLeftIcon className="h-6 w-6" />
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       <div className="w-full text-white h-10 bg-gray-900 flex justify-between p-2">
