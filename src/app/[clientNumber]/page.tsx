@@ -39,7 +39,7 @@ export default async function Chat({
             >
               <p>{message.menssage}</p>
               <p className="w-full text-right text-xs text-white/50">
-                {message.date}{" "}
+                {new Date(message.date).toLocaleString()}{" "}
               </p>
             </div>
           </div>
