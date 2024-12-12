@@ -15,7 +15,7 @@ export default async function Chat({
 
   return (
     <main>
-      <div className="w-full h-10 bg-gray-900 flex justify-between p-2">
+      <div className="w-full text-white h-10 bg-gray-900 flex justify-between p-2">
         {messages[0].client_name}
         <Link
           className="text-white bg-gray-700 px-2 rounded-lg top-5 right-5"
@@ -24,7 +24,7 @@ export default async function Chat({
           <ArrowUturnLeftIcon className="h-6 w-6" />
         </Link>
       </div>
-      <div className="flex flex-col py-4 px-10 gap-4 bg-gray-950 lg:bg-gray-950/50 h-[calc(100vh-40px)] overflow-y-scroll">
+      <div className="flex flex-col py-4 px-10 gap-4 bg-gray-950 lg:bg-black h-[calc(100vh-40px)] overflow-y-scroll">
         {messages.map((message) => (
           <div
             key={message.id}
@@ -33,7 +33,7 @@ export default async function Chat({
             }`}
           >
             <div
-              className={`flex flex-col gap-2 p-5 rounded-xl w-full max-w-[65%] lg:max-w-[40%] ${
+              className={`flex text-white flex-col gap-2 p-5 rounded-xl w-full max-w-[65%] lg:max-w-[40%] ${
                 message.action === "ENVIADO" ? "bg-gray-600" : "bg-gray-800"
               } `}
             >
